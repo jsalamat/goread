@@ -42,5 +42,22 @@ Mobile Application
 ### Database Architecture:
 The MySQL database was selected due to the number of tables and the multitude of relationships between the tables.  But, to allow the system to grow with the number of users it would be recommended to partition some tables such as the table which log the users’ activities as it could balloon in size and cause performance issues.  Last, with the current schema, it will be relatively easy to add additional tables to support new functionality for the application.
 
- ![Math With Friends Login](/assets/images/mathdemoAImgur.gif "Login and authetication")
+ ![GO READ Login](/assets/images/DatabaseArchitecture.png "Database Architecture")
+
+### User Acquisition:
+To acquire the first fifty users, we will simply use word of mouth starting with my own children as pilot users and expanding to their friends and family.
+To expand to the next level will require advertising and hopefully some positive feedback from the initial users.
+Currently there are no plans for being acquired but we are leaving all options open.
+
+![GO READ Main](/assets/images/goread_main.jpg "GO READ Main")
+
+![GO READ Reader](/assets/images/goread_reader_b.jpg "GO READ Reader")
+
+![GO READ Parent](/assets/images/goread_parent.jpg "GO READ Parent")
+
+
+
+
+
+
 
