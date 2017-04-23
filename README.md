@@ -28,16 +28,16 @@ There are several applications with similar functionality including:
 
 ## Minimum Viable Product
 The MVP includes:
-Web Application
-+	Create User Account
-+	Logon
-+	Search Books
-+	Add Books
-+	Track Time
-+	Report Time 
-Mobile Application
-+	Logon
-+	Track Time
++	Web Application
+	+	Create User Account
+	+	Logon
+	+	Search Books
+	+	Add Books
+	+	Track Time
+	+	Report Time 
++	Mobile Application
+	+	Logon
+	+	Track Time
 
 ### Database Architecture:
 The MySQL database was selected due to the number of tables and the multitude of relationships between the tables.  But, to allow the system to grow with the number of users it would be recommended to partition some tables such as the table which log the users’ activities as it could balloon in size and cause performance issues.  Last, with the current schema, it will be relatively easy to add additional tables to support new functionality for the application.
