@@ -16,9 +16,9 @@ Some the key features include:
 +	Recommend Books
 +	Approval of child’s reading log
 +	Reporting capabilities
-++	Current activity
-++	Progress Report
-++	Detailed Activity Report
+	+	Current activity
+	+	Progress Report
+	+	Detailed Activity Report
 
 ## Competition
 There are several applications with similar functionality including:
@@ -29,20 +29,20 @@ There are several applications with similar functionality including:
 ## Minimum Viable Product
 The MVP includes:
 Web Application
-+	Create User Account
-+	Logon
-+	Search Books
-+	Add Books
-+	Track Time
-+	Report Time
+	+	Create User Account
+	+	Logon
+	+	Search Books
+	+	Add Books
+	+	Track Time
+	+	Report Time 
 Mobile Application
-+	Logon
-+	Track Time
+	+	Logon
+	+	Track Time
 
 ### Database Architecture:
 The MySQL database was selected due to the number of tables and the multitude of relationships between the tables.  But, to allow the system to grow with the number of users it would be recommended to partition some tables such as the table which log the users’ activities as it could balloon in size and cause performance issues.  Last, with the current schema, it will be relatively easy to add additional tables to support new functionality for the application.
 
- ![GO READ Login](/assets/images/DatabaseArchitecture.png "Database Architecture")
+![GO READ Login](/assets/images/DatabaseArchitecture.png "Database Architecture")
 
 ### User Acquisition:
 To acquire the first fifty users, we will simply use word of mouth starting with my own children as pilot users and expanding to their friends and family.
