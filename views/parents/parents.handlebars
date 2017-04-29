@@ -5,6 +5,11 @@
                     <div class="header-content">
                         <div class="header-content-inner">
                             <h2 class="section-heading">My Kids</h2>
+                                    <form action="/kids/add" method="POST">
+                                        <input type="text" name="kid_name" placeholder="what's the name of the kid?" /><br />
+                                        <input type="text" name="kid_email" placeholder="what's the email of the kid?" /><br />
+                                        <input type="submit" value="Add Kid"></input>
+                                    </form>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -15,30 +20,13 @@
                                 <tbody>
                                     {{#each kids}}
                                         <tr>
-                                            <td> {{this.username}} </td>
-                                            <td> {{this.email}} </td>
+                                            <td> {{this.kid_name}} </td>
+                                            <td> {{this.kid_email}} </td>
                                         </tr>
                                     {{/each}}
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-5">
-                    <div class="device-container">
-                        <!-- <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen"> -->
-                                    
-
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <!-- <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> -->
-                                <!-- </div>
-                                <div class="button"> -->
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-<!--                                 </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -50,7 +38,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading">Child's Books</h2>
+                    <h2 class="section-heading">Kid's Books</h2>
+                        <form class="create-update-form" action="/kids/log" method="POST">
+                                <label>My Kids: 
+                                    <select name="kid" >
+                                        {{#each kids}}
+                                            <option value= {{this.kid_email}} > {{kid_name}} </option>
+                                         {{/each}}
+                                    </select>
+                                </label>
+                                     <input type="text" name="kid_book" placeholder="what's the name of the book?" /><br />
+                                     <input type="submit" value="Add Book"></input>
+                                </form>
                     <table class="table">
                         <thead>
                             <tr>
@@ -83,7 +82,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="section-heading">Child's Progress</h2>
+                    <h2 class="section-heading">Kid's Progress</h2>
                     
                     <form>
                         <input list="period" name="progress" >

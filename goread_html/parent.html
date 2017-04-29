@@ -73,6 +73,11 @@
                     <div class="header-content">
                         <div class="header-content-inner">
                             <h2 class="section-heading">My Kids</h2>
+                                    <form action="/kids/add" method="POST">
+                                        <input type="text" name="kid_name" placeholder="what's the name of the kid?" /><br />
+                                        <input type="text" name="kid_email" placeholder="what's the email of the kid?" /><br />
+                                        <input type="submit" value="Add Kid"></input>
+                                    </form>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -81,6 +86,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <!--     replace this in handle bars with these
+                                    {{#each kids}}
+                                        <tr>
+                                            <td> {{this.kid_name}} </td>
+                                            <td> {{this.kid_email}} </td>
+                                        </tr>
+                                    {{/each}}
+                                    end for handle bars -->
                                 <!--     replace this in handle bars with these
                                     {{#each kids}}
                                         <tr>
@@ -94,23 +107,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5">
-                    <div class="device-container">
-                        <!-- <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device">
-                                <div class="screen"> -->
-                                    
-
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <!-- <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> -->
-                                <!-- </div>
-                                <div class="button"> -->
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-<!--                                 </div>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
             </div>
         </div>
     </header>
@@ -121,6 +117,31 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="section-heading">Kid's Books</h2>
+                            <form class="create-update-form" action="/kids/log" method="POST">
+                                <label>My Kids: 
+                                    <select name="kid" >
+<!-- uncomment the each for the handlersbars
+                                        {{#each kids}}
+                                            <option value= {{this.kid_email}} > {{kid_name}} </option>
+                                         {{/each}} -->
+<!-- this for html design ============== -->
+                                            <option value= 1 > Child 1 </option>
+                                            
+                                            <option value= 2 > Child 2 </option>
+                                       
+                                            <option value= 3 > Child 3 </option>
+                                   
+                                            <option value= 4 > Child 4 </option>
+                             
+                                            <option value= 5 > Child 5 </option>
+                        
+<!-- remove this and put each for handlebars ^^^^^^^^^^=================-->
+                                    </select>
+                                </label>
+                                     <input type="text" name="kid_book" placeholder="what's the name of the book?" /><br />
+                                     <input type="submit" value="Add Book"></input>
+                                </form>
+
                     <table class="table">
                         <thead>
                             <tr>
