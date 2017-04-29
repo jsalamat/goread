@@ -1,0 +1,35 @@
+{
+  "name": "goread",
+  "version": "1.0.0",
+  "description": "A reading app to help set reading goals and progress on read books",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "goread"
+  ],
+  "author": "Jon Salamat",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "dateutil": "^0.1.0",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.1",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsalamat/goread.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jsalamat/goread/issues"
+  },
+  "homepage": "https://github.com/jsalamat/goread#readme"
+}
