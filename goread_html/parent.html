@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Go Read" content="">
+
+    <title>GO Read!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="assets/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/lib/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="assets/lib/device-mockups/device-mockups.min.css">
+
+    <!-- Theme CSS -->
+    <link href="assets/css/new-age.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                
+                        <a class="navbar-brand page-scroll" href="#page-top">GO Read!</a>
+                    <a class="navbar-brand page-scroll" href="/users/sign-out">Sign Out</a>
+
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                        <li>
+                            <a class="page-scroll" href="#myKids">My Kids</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#kidsBooks">Kid's Books</a>
+                        </li>
+                       <li>
+                            <a class="page-scroll" href="#kidsProgress">Kid's Progress</a>
+                        </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+       <header>
+        <div id="myKids" class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h2 class="section-heading">My Kids</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>e-mail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <!--     replace this in handle bars with these
+                                    {{#each kids}}
+                                        <tr>
+                                            <td> {{this.username}} </td>
+                                            <td> {{this.email}} </td>
+                                        </tr>
+                                    {{/each}}
+                                    end for handle bars -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="device-container">
+                        <!-- <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen"> -->
+                                    
+
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <!-- <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> -->
+                                <!-- </div>
+                                <div class="button"> -->
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+<!--                                 </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- My Books Section -->
+    <section id="kidsBooks" class="kidsBooks bg-primary text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">Kid's Books</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Current Page</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>First Book</td>
+                                <td>Chris</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Second Book</td>
+                                <td>Scott</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Progres Section -->
+    <section id="kidsProgress" class="kidsProgress text-center">
+    <!-- <section id="download" class="download bg-primary text-center"> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">Kid's Progress</h2>
+                    
+                    <form>
+                        <input list="period" name="progress" >
+
+                        <datalist id="period">
+                            <option value="Current Week">
+                            <option value="Previous Week">
+                            <option value="Last 30 days">
+                            <option value="Last 90 days">
+                        </datalist>
+
+
+                        <input type="submit" name="report" value="Go">
+                    </form>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Title</th>
+                                <th>Time (minutes)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1/12/2017</td>
+                                <td>First Book</td>
+                                <td>35</td>
+                            </tr>
+                            <tr>
+                                <td>1/13/2017</td>
+                                <td>First Book</td>
+                                <td>25</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td> </td>
+                                <td>Total Minutes:</td>
+                                <td>60</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="footernum">
+            <img src="assets/images/goReadbgblack.png" alt="GO Read!" class="img-responsive">
+            <p >&copy; 2017</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <!-- <script src="/assets/lib/jquery/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="assets/js/new-age.min.js"></script>
+
+
+
+</body>
+
+</html>
