@@ -168,6 +168,26 @@
     color:#fff;
 }
 
+ #goRead{
+    min-height:auto;background:url(../images/bookjgirl3.png);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    color:#fff;
+}
+
+ #goParent{
+    min-height:auto;background:url(../images/books2.png);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    color:#fff;
+}
+
+ #kidsProgress{
+    min-height:auto;background:url(../images/bookgirl4.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 #signInBox{
   background-color: #999999;
   padding: 25px;
@@ -187,14 +207,14 @@
  	max-width:500px;
  	margin:0 auto;
  }
- header .header-content .header-content-inner 
- h1{
+ header .header-content .header-content-inner h1{
  	  font-size: 50px;
     font-style: italic;
     padding-bottom: 0;
     padding-left: 20px;
     color: #00ff00;
  }
+ 
   #sign_In  h1{
     font-size: 45px;
     font-style: italic;
@@ -215,6 +235,24 @@
   margin:0 auto;
  }
  #newRegistration .section-content .section-content-inner 
+ h1{
+    font-size: 50px;
+    font-style: italic;
+    padding-bottom: 0;
+    padding-left: 20px;
+    color: #00ff00;
+ }
+
+  #goRead .section-content{
+  padding:130px 0 70px;
+  position:relative;
+ }
+ #goRead .section-content .section-content-inner{
+  position:relative;
+  max-width:500px;
+  margin:0 auto;
+ }
+ #goRead .section-content .section-content-inner 
  h1{
     font-size: 50px;
     font-style: italic;
@@ -265,6 +303,27 @@ header .header-content .header-content-inner
  #newRegistration .device-container .screen img{
   border-radius:3px;
  }
+ #goRead .section-content .section-content-inner 
+ p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #00ff00;
+}
+ #goRead .section-content .section-content-inner .list-badges{
+  margin-bottom:25px;
+ }
+ #goRead .section-content .section-content-inner .list-badges 
+ img{height:50px;
+  margin-bottom:25px;
+ }
+ #goRead .device-container{
+  max-width:300px;
+  margin:0 auto 100px;
+ }
+ #goRead .device-container .screen img{
+  border-radius:3px;
+ }
 
  @media (min-width:768px){
   header{
@@ -276,6 +335,10 @@ header .header-content .header-content-inner
   #newRegistration{
     min-height:100%;
   }
+  #goRead{
+    min-height:100%;
+  }
+
  header .header-content{
  	text-align:left;
  	padding:0;
@@ -314,7 +377,28 @@ header .header-content .header-content-inner
  #newRegistration .device-container{
   max-width:none;max-height:calc(0vh);
   margin:100px auto 0
-  }}
+  }
+
+#goRead .section-content{
+  text-align:left;
+  padding:0;
+  height:100vh;
+ }
+ #goRead .section-content .section-content-inner{
+  max-width:none;
+  margin:0;
+  position:absolute;
+  top:35%;
+  transform:translateY(-50%);
+ }
+ #goRead .section-content .section-content-inner h1{
+  font-size:35px;
+ }
+ #goRead .device-container{
+  max-width:none;max-height:calc(0vh);
+  margin:100px auto 0
+  }
+}
 
  footer,section.contact{
  	text-align:center
@@ -325,6 +409,9 @@ header .header-content .header-content-inner
   	font-size:50px
   	}
   #newRegistration .section-content .section-content-inner h1{
+    font-size:50px
+    }
+  #goRead .section-content .section-content-inner h1{
     font-size:50px
     }
   }
@@ -701,11 +788,12 @@ label#emailSignin{
 
  input[type=submit] {
     background-color: #00ff00;
-    border: none;
+    border: 1px solid #00ff00;
+    border-radius: 15px;
     color: #ffffff;
     font-size: 18px;
     letter-spacing: 1px;
-    padding: 16px 32px;
+    padding: 8px 32px;
     text-decoration: none;
     margin: 15px 2px 50px 2px;
     cursor: pointer;
@@ -713,7 +801,8 @@ label#emailSignin{
 }
 
  input[type=submit]:hover {
-    background-color: #1f66f4;
+    border: 1px solid #e6e6e6;
+    background-color: #009900;
     color: #ffffff;
     transition: background-color 1s, color 1s;
 }
@@ -739,3 +828,24 @@ label#emailSignin{
     transition: background-color 1s, color 1s;
 }
 /* end of newRegistration*/
+
+button.start, button.pause, button.stop{
+    background-color: #ffffff;
+    border: 1px solid #009900;
+    color: #009900;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 12px 25px;
+    text-decoration: none;
+    margin:auto 0;
+    cursor: pointer;
+    box-shadow: 4px 4px 2px #888888;
+}
+button.start:hover, button.pause:hover, button.stop:hover{
+    background-color: #00ff00;
+    border: 1px solid #009900;
+    color: #ffffff; 
+    transition: background-color 0s, color 1s;
+    box-shadow: 3px 3px 2px #888888;
+}
+
