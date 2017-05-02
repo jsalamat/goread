@@ -61,7 +61,7 @@
                                     <select name="kid" >
 
                                         {{#each kids}}
-                                            <option value= {{this.kid_email}} > {{kid_name}} </option>
+                                            <option value="{{this.email}}"> {{this.username}} </option>
                                          {{/each}} 
 
                                        <!--      <option value= 1 > Child 1 </option>
@@ -170,3 +170,7 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript" >
+            var user_id={{this.userid}}
+    </script>
