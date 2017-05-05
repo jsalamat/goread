@@ -64,6 +64,7 @@
                                             <option value="{{this.email}}"> {{this.username}} </option>
                                          {{/each}} 
 
+
                                        <!--      <option value= 1 > Child 1 </option>
                                             <option value= 2 > Child 2 </option>
                                             <option value= 3 > Child 3 </option>
@@ -86,9 +87,9 @@
                         </thead>
                         <tbody>
 
-                            {{#each kids}}
+                            {{#each kidbooks}}
                                 <tr>
-                                    <td> {{this.username}} </td>
+                                    <td> {{this.user_id}} </td>
                                     <td> {{this.title}} </td>
                                     <td> {{this.current_page}} </td>
                                 </tr>
@@ -172,5 +173,5 @@
     </section>
 
     <script type="text/javascript" >
-            var user_id={{this.userid}}
+            var user_id={{this.user_id}}
     </script>

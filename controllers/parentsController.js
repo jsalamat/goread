@@ -6,7 +6,7 @@ var connection = require('../config/connection.js')
 
 //this is the parents_controller.js file
 router.get('/', function(req,res) {
-  //console.log("Parents");
+  // console.log("Parents");
   query = "SELECT u.id AS kids_id, u.username, u.email FROM users AS u RIGHT JOIN parent_students AS ps ON u.id = ps.student_id WHERE ps.parent_id = ?";
     connection.query(query, [ req.session.user_id ], function(err, kids){
       console.log(kids);
@@ -18,10 +18,19 @@ router.get('/', function(req,res) {
           };
         };
       }
+      console.log(allKidsIds)
+      query="SELECT ub.user_id, ub.book_id, b.title FROM user_books AS ub INNER JOIN BOOKS AS b ON ub.book_id = b.id WHERE ub.user_id = ?";
+      connection.query(query, [ allKidsIds ], function(err, kidbooks){
+        
+        console.log(kidbooks);
 
-      
-      res.render('parents/kids', { 
+        kidbooks = JSON.stringify(kidbooks);
+        kidbooks = kidbooks.replace(/&quot;/g,"\"");
+        console.log(kidbooks);
+
+        res.render('parents/parents', { 
         kids: kids,
+        kidbooks: kidbooks,
         logged_in: req.session.logged_in,
         user_email: req.session.user_email,
         user_id: req.session.user_id,
@@ -29,6 +38,21 @@ router.get('/', function(req,res) {
         is_reader: req.session.is_reader,
         is_parent: req.session.is_parent
       });
+      });
+
+
+
+
+      // res.send( { 
+      //   kids: kids,
+      //   logged_in: req.session.logged_in,
+      //   user_email: req.session.user_email,
+      //   user_id: req.session.user_id,
+      //   usertype: req.session.usertype,
+      //   is_reader: req.session.is_reader,
+      //   is_parent: req.session.is_parent
+      // })
+      
     });
 
 });
@@ -75,57 +99,6 @@ router.get('/', function(req,res) {
 });
 
 
-//logging time
-router.post('/log', function(req,res) {
-  //check if the user has already posted time
-  // user_id int NOT NULL,
-  // book_id int NOT NULL,
-  // created date NOT NULL,
-  // time_lapsed dec(6,2),
-  console.log("Posting time");
-  var today = new Date();
-  var currentDate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  console.log(currentDate);
-  var totalTime = parseInt( req.body.totalTime );
-  var query = "SELECT * FROM logs WHERE user_id = ? AND book_id = ? AND created = ? ";
-  console.log("Query: " + query);
-  console.log("Attributes: " + req.session.user_id + "  " + req.body.book + " " + currentDate  )
-  connection.query(query, [ req.session.user_id, req.body.book, currentDate ], function(err, logs){
-    // console.log(logs);
-     //console.log(logs[0].time_lapsed);
-    // var newTime = parseInt(logs[0].time_lapsed);
-    // console.log("New time: " + newTime);
-    if( logs == "" ){
-      //Assumes no time logged
-      query = "INSERT INTO logs (user_id, book_id, created, time_lapsed ) VALUES (?, ?, ?, ?)"
-      console.log("Insert Query: " + query);
-      connection.query(query, [ req.session.user_id, req.body.book, currentDate, req.body.totalTime ], function(err, response) {
-        if (err) res.send('501');
-        else {
-
-          console.log("Refresh Readers Page - Insert");
-          res.redirect("/parents");
-
-        }; //After posting Insert
-      });
-    }else {
-      console.log("DB Time: " + logs[0].time_lapsed);
-      console.log("Lapse Time: " + totalTime );
-      totalTime += parseInt(logs[0].time_lapsed);
-      console.log("Total time: " + totalTime);
-      query = "UPDATE logs SET time_lapsed = ? WHERE user_id = ? AND book_id = ? AND created = ?"
-      console.log("Update Query: " + query);
-      connection.query(query, [ totalTime, req.session.user_id, req.body.book, currentDate ], function(err, response) {
-        if (err) res.send('600');
-        else {
-          console.log("Refresh Readers Page - Update");
-          res.redirect("/parents");
-        };
-      });
-  };
-
-  });
-});
 
 // ===============================================================================
 

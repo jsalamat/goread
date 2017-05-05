@@ -7,7 +7,7 @@ var connection = require('../config/connection.js')
 
 //this is the readers_controller.js file
 router.get('/', function(req,res) {
-  var query = "SELECT l.created, l.time_lapsed, b.title , DATE_FORMAT(l.created, '%d/%m/%Y') AS 'log_created' FROM logs l LEFT JOIN books b ON l.book_id = b.id WHERE user_id = ?";
+  var query = "SELECT l.created, l.time_lapsed, b.title , DATE_FORMAT(l.created, '%m/%d/%Y') AS 'log_created' FROM logs l LEFT JOIN books b ON l.book_id = b.id WHERE user_id = ?";
   connection.query(query, [ req.session.user_id ], function(err, logs){
     //console.log(logs);
     //Get my books
