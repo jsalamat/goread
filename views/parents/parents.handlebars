@@ -58,13 +58,15 @@
                     <h2 class="section-heading">Kid's Books</h2>
                             <form class="create-update-form" action="/kids/log" method="POST">
                                 <label>My Kids: 
-                                    <select name="kid" >
+                                    <select id="selectKids" name="kid" onchange="selectKidBooks()">
+
+
 
                                         {{#each kids}}
-                                            <option value="{{this.email}}"> {{this.username}} </option>
+                                            <option value="{{this.username}}"> {{this.username}} </option>
                                          {{/each}} 
 
-
+                                    <p id="demo"></p>
                                        <!--      <option value= 1 > Child 1 </option>
                                             <option value= 2 > Child 2 </option>
                                             <option value= 3 > Child 3 </option>
@@ -85,7 +87,7 @@
                                 <th>Current Page</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="kids-books">
 
                             {{#each kidbooks}}
                                 <tr>
@@ -95,6 +97,8 @@
                                 </tr>
                             {{/each}} 
 
+                          
+                
                             <!-- <tr>
                                 <td>Chris</td>
                                 <td>First Book</td>

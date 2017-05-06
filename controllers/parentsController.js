@@ -24,20 +24,21 @@ router.get('/', function(req,res) {
         
         console.log(kidbooks);
 
-        kidbooks = JSON.stringify(kidbooks);
-        kidbooks = kidbooks.replace(/&quot;/g,"\"");
+        // kidbooks = JSON.stringify(kidbooks);
+        // kidbooks = kidbooks.replace(/&quot;/g,"\"");
         console.log(kidbooks);
+        console.log(kids)
 
         res.render('parents/parents', { 
-        kids: kids,
-        kidbooks: kidbooks,
-        logged_in: req.session.logged_in,
-        user_email: req.session.user_email,
-        user_id: req.session.user_id,
-        usertype: req.session.usertype,
-        is_reader: req.session.is_reader,
-        is_parent: req.session.is_parent
-      });
+          kids: kids,
+          kidbooks: kidbooks,
+          logged_in: req.session.logged_in,
+          user_email: req.session.user_email,
+          user_id: req.session.user_id,
+          usertype: req.session.usertype,
+          is_reader: req.session.is_reader,
+          is_parent: req.session.is_parent
+        });
       });
 
 

@@ -22,6 +22,7 @@ router.get('/api/kids', function(req,res) {
           }else {allKidsIds += ", " + kids[k].kids_id;
           };
         };
+
       }
       query="SELECT ub.user_id, ub.book_id, b.title FROM user_books AS ub INNER JOIN BOOKS AS b ON ub.book_id = b.id WHERE ub.user_id = ?";
       connection.query(query, [ allKidsIds ], function(err, kidbooks){
