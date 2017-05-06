@@ -40,6 +40,28 @@ var newTable = "";
 		})
 	$("#kids-books").append(newTable);
 	})
+
+	$.get("/api/logs/" + valueKids)
+	.then(function(res) {
+		console.log("====================")
+		// console.log(res);
+var newLogs = "";
+		$("#kids-logs").empty();
+		
+			console.log(typeof res)
+			var selectedBookbyKid = JSON.parse(res);
+		selectedBookbyKid.forEach(function(item, index) {
+			console.log(item);
+		newLogs += '<tr class="selectkid">';
+		newLogs += '<td>' + item.log_created + '</td>';
+		newLogs += '<td>' + item.title + '</td>';
+		newLogs += '<td>' + item.time_lapsed + '</td>'  
+		newLogs += '</tr>';
+		})
+	$("#kids-logs").append(newLogs);
+	})
 }
 // [{"user_id":2,"book_id":8,"title":"Captain Underpants and the Big, Bad Battle of the Bionic Booger Boy"},
 // {"user_id":2,"book_id":12,"title":"Wayne Gretzky"}]
+
+// Object {created: "2017-01-12T05:00:00.000Z", time_lapsed: 1.2, title: "My Life as a Gamer", log_created: "01/12/2017"}
