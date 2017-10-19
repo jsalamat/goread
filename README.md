@@ -1,4 +1,5 @@
 # GO READ!
+https://go-read.herokuapp.com/
 ### Problem:
    Do you know how much time your son or daughter has read today, this week or last week? Does your child need to record and report the time they read outside of school to their teacher?  Or, do you know how much time you’ve set aside to read?  Last, would you like to block the use of your child’s phone from games and texting until they finish their daily reading requirements?  
 
